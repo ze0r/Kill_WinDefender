@@ -1,5 +1,5 @@
 # Kill_WinDefender
-A tool used for purge Defender on windows
+A tool that used for purge Defender on windows
 
 # How to use?
 1 download Kill-Defender.bat   
