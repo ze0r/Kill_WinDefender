@@ -22,7 +22,7 @@ takeown /F "C:\Program Files\Windows Defender Advanced Threat Protection" /A /R 
 icacls "C:\Program Files\Windows Defender Advanced Threat Protection" /grant Administrators:(F) /T
 rmdir /S /Q "C:\Program Files\Windows Defender Advanced Threat Protection"
 
-REM Delete service in registration
+:: Delete service in registration
 
 sc Config TrustedInstaller binPath= "cmd.exe /C reg delete HKLM\SYSTEM\CurrentControlSet\Services\SecurityHealthService /f"
 sc start TrustedInstaller
@@ -31,3 +31,7 @@ sc Config TrustedInstaller binPath= "cmd.exe /C reg delete HKLM\SYSTEM\CurrentCo
 sc start TrustedInstaller
 sc start TrustedInstaller
 sc Config TrustedInstaller binPath= "%systemroot%\servicing\TrustedInstaller.exe"
+
+:: Add regedit key to disable VBS & HVCI
+REG ADD HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard /v EnableVirtualizationBasedSecurity /t REG_DWORD /d 0 /f
+REG ADD HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\HypervisorEnforcedCodeIntegrity /v Enabled /t REG_DWORD /d 0 /f
