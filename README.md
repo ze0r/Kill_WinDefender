@@ -3,7 +3,7 @@ A tool that used for purge Defender on windows
 
 # How to use?
 1 download Kill-Defender.bat   
-2 Run msconfig, then go to boot -> Security Boot -> miminal, apply, Reboot..   
+2 right-click Kill-Defender.bat -> run as administrator, then press enter
 3 In safe mode, run Kill-Defender.bat, double clike or run at cmd.exe are all fine.   
-4 Run msconfig, select normal bootl, then reboot...   
+4 right-click Kill-Defender.bat -> run as administrator, then press enter
 5 OK.   
